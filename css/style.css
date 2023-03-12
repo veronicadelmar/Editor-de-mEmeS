@@ -133,13 +133,9 @@ h1{
 }
 /* IMAGEN URL */
 figure{
+    background-color: black;
     width: 100%;
     height: 200px;
-    background-color: black;
-    /* ELIMINAR LUEGO */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 /* Button download */
 #button__download{
@@ -356,6 +352,10 @@ footer{
     .hover:hover{
     background-color: var(--hover--primary);
     }
+    .btn__panel--close{
+        display: none;
+    }
+    /* _________ HEADER - MAIN _________ */
     header, .container{
         padding-right: 300px;
     }
@@ -370,7 +370,9 @@ footer{
     }
     /* _________ ASIDE ________ */
     .image__panel, .text__panel{
-        display: block;
         width: 300px;
+    }
+    .image__panel{
+        display: block;
     }
 }
