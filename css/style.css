@@ -44,7 +44,11 @@
 .panels{
     background-color: var(--bg--aside);
     color: var(--color--primary);
-    padding: 40px 15px;
+    padding: 10px 15px 40px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
 }
 .second__title{
     margin-top: 30px;
@@ -117,8 +121,7 @@ h1{
 }
 /* Container memes canvas */
 .container__memes--canvas{
-    width: 100%;
-    position: relative;
+    width: 85%;
 }
 /* Texts to edit */
 .text__editor{
@@ -353,6 +356,10 @@ footer{
     .hover:hover{
     background-color: var(--hover--primary);
     }
+    header, .container{
+        padding-right: 300px;
+    }
+    /* _________ MAIN _________ */
     /* Edit - Top text - Bottom text */
     .transition{
         transition: 0.5s;
@@ -361,12 +368,9 @@ footer{
     #button__download:hover{
         background-color: var(--btn--download--hover);
     }
-    footer{
+    /* _________ ASIDE ________ */
+    .image__panel, .text__panel{
         display: block;
-        background-color: var(--background-header);
-        color: var(--color-white);
-        font-size: 0.8rem;
-        font-style: oblique;
-        text-align: center;
+        width: 300px;
     }
 }
