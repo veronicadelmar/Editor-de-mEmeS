@@ -39,8 +39,9 @@ $("#btn__img").addEventListener("click", () =>{
     }
 })
 // Image panel - disappear
-$(".btn__imagen__panel--close").addEventListener("click", () =>{
+$(".btn__image__panel--close").addEventListener("click", () =>{
     $(".image__panel").classList.add("hidden")
+    $(".image__panel").style.display = "none"
 })
 // _________ ASIDE - Text panel - appear ________
 $("#btn__text").addEventListener("click", () =>{
@@ -52,6 +53,7 @@ $("#btn__text").addEventListener("click", () =>{
 // Text panel - disappear
 $(".btn__text__panel--close").addEventListener("click", () =>{
     $(".text__panel").classList.add("hidden")
+    $(".text__panel").style.display = "none"
 })
 // _________ MAIN _________
 // IMAGEN URL
@@ -64,11 +66,54 @@ $("#url__image").addEventListener("input", () =>{
 // Background
 $("#background").addEventListener("input", () =>{
     $("figure").style.backgroundColor = $("#background").value
-    $("span").innerText = ($("#background").value).toUpperCase()
+    $("#bg__img__hex").innerText = ($("#background").value).toUpperCase()
     $("#background").style.backgroundColor = $("#background").value
 })
 // Background selector
 $(".bg__select").addEventListener("change", () =>{
-    $("#image__meme").style.backgroundBlendMode = $(".bg").value
+    if ($("#image__meme").style.backgroundBlendMode = "unset"){
+        $("#image__meme").style.backgroundBlendMode = $(".bg").value
+    }
 })
+
+
+
+// _________ ASIDE - Text panel
+// text top
+$("#text__top").addEventListener("input", ()=>{
+    $(".text__top").innerText = $("#text__top").value
+})
+// text top - disappear 
+$("#cb__text__top").addEventListener("change", ()=>{
+    $(".text__top").style.color = $("#background").value
+    $(".text__top").style.backgroundColor = $("#background").value
+    if (!$("#cb__text__top").checked){
+        $(".text__top").style.color = $("#color__text").value
+        $(".text__top").style.backgroundColor = $("#bg__font").value
+    }
+})
+// text bottom
+$("#text__bottom").addEventListener("input", ()=>{
+    $(".text__bottom").innerText = $("#text__bottom").value
+})
+// text bottom - disappear
+$("#cb__text__bottom").addEventListener("input", ()=>{
+    $(".text__bottom").style.backgroundColor = $("#background").value
+})
+
+
+// /* Unified EVENT - text top AND text - color and backgroundColor
+$("#color__text").addEventListener("input", () =>{
+    $(".text__editor").style.color = $("#color__text").value
+    // $(".text__bottom").style.color = $("#color__text").value
+    $("#color__text__hex").innerText = ($("#color__text").value).toUpperCase()
+    $("#color__text").style.backgroundColor = $("#color__text").value
+})
+$("#bg__font").addEventListener("input", () =>{
+    $(".text__top").style.backgroundColor = $("#bg__font").value
+    $(".text__bottom").style.backgroundColor = $("#bg__font").value
+    $("#bg__font__hex").innerText = ($("#bg__font").value).toUpperCase()
+    $("#bg__font").style.backgroundColor = $("#bg__font").value
+})
+
 

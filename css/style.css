@@ -137,6 +137,10 @@ figure{
     width: 100%;
     height: 200px;
 }
+#image__meme{
+    background-blend-mode: unset;
+}
+
 /* Button download */
 #button__download{
     padding: 15px;

@@ -54,13 +54,13 @@
             <!-- Container memes canvas -->
             <section class="container__memes--canvas">
                 <!-- Top text -->
-                <p class="text__editor">TOP TEXT</p>
+                <p class="text__editor text__top">TOP TEXT</p>
                 <!-- IMAGEN URL -->
                 <figure>
                   <img src="" id="image__meme">
                 </figure>
                 <!-- Bottom text -->
-                <p class="text__editor">BOTTOM TEXT</p>
+                <p class="text__editor text__bottom">BOTTOM TEXT</p>
             </section>
             <!-- Button download -->
             <button id="button__download" class="btn__transition">
@@ -72,7 +72,7 @@
     <!-- _________ ASIDE - Image panel ________ -->
     <aside class="panels hidden image__panel">
         <!-- btn X (close) - Image panel -->
-        <button class="btn__panel--close btn__transition btn__imagen__panel--close">
+        <button class="btn__panel--close btn__transition btn__image__panel--close">
             <i class="fas fa-times hover" aria-hidden="true"></i>
         </button>
         <section>
@@ -80,22 +80,22 @@
             <h2 class="second__title">imagen</h2>
             <!-- Url -->
             <h3 class="third__title">url</h3>
-            <input type="text" name="text" class="input__get focus hover transition" id="url__image">
+            <input type="url" name="text" class="input__get focus hover transition" id="url__image">
             <!-- Background -->
             <h3 class="third__title">fondo</h3>
             <section id="container__background">
                 <button>
                     <input type="color" name="background" id="background" class="btn__transition">
-                    <span id="id__color">#FFFFF</span>
+                    <span id="bg__img__hex">#FFFFF</span>
                 </button>
                 <!-- Background selector -->
                 <select name="select" class="bg__select focus hover transition">
-                    <option value="unset" class="bg">Ninguno</option>
-                    <option value="lighten" class="bg">Aclarar</option>
-                    <option value="darken" class="bg">Oscurecer</option>
-                    <option value="difference" class="bg">Diferencia</option>
-                    <option value="luminosity" class="bg">Luminosidad</option>
-                    <option value="multiply" class="bg">Multiplicar</option>
+                    <option value="unset">Ninguno</option>
+                    <option value="lighten">Aclarar</option>
+                    <option value="darken">Oscurecer</option>
+                    <option value="difference">Diferencia</option>
+                    <option value="luminosity">Luminosidad</option>
+                    <option value="multiply">Multiplicar</option>
                 </select>
             </section>
             <!-- Filters panel -->
@@ -163,13 +163,13 @@
         <h2 class="second__title">texto</h2>
         <!-- Edit - Top text -->
         <h3 class="third__title">superior</h3>
-        <input type="text" name="text" class="input__get focus hover transition">
-        <input type="checkbox" name="" id="">
+        <input type="text" name="text" id="text__top" class="input__get focus hover transition">
+        <input type="checkbox" name="" id="cb__text__top">
         <label for="" class="label__size">Sin texto superior</label>
         <!-- Edit - Buttom text -->
         <h3 class="third__title">inferior</h3>
-        <input type="text" name="text" class="input__get focus hover transition">
-        <input type="checkbox" name="" id="">
+        <input type="text" name="text" id="text__bottom" class="input__get focus hover transition">
+        <input type="checkbox" name="" id="cb__text__bottom" value="0">
         <label for="" class="label__size" >Sin texto inferior</label>
         <!-- Font -->
         <section>
@@ -201,17 +201,17 @@
             <section class="container__font">
                 <article id="text__color">
                     <h3 class="third__title">color</h3>
-                    <button id="text__color">
-                        <input type="color" name="background">
-                        <span id="id__color">#000000</span>
+                    <button>
+                        <input type="color" name="color__text" id="color__text">
+                        <span id="color__text__hex">#000000</span>
                     </button>
                 </article>
                 <!-- Bg - color -->
                 <article id="font__color">
                     <h3 class="third__title">fondo</h3>
                     <button>
-                        <input type="color" name="background">
-                        <span id="id__color">#FFFFF</span>
+                        <input type="color" name="background__text" id="bg__font">
+                        <span id="bg__font__hex">#FFFFF</span>
                     </button>
                 </article>
             </section>
