@@ -120,7 +120,7 @@ h1{
     padding: 40px 20px;
 }
 /* Container memes canvas */
-.container__memes--canvas{
+.container__memes__edit{
     width: 85%;
 }
 /* Texts to edit */
@@ -190,10 +190,10 @@ input[type="color"]{
     border: none;
     border-radius: 100%;
 }
-#background::-webkit-color-swatch{
+#btn__bgimagen::-webkit-color-swatch{
     display: none;
 }
-#background::-moz-color-swatch{
+#btn__bgimagen::-moz-color-swatch{
     display: none;
 }
 span{
@@ -364,6 +364,9 @@ footer{
         padding-right: 300px;
     }
     /* _________ MAIN _________ */
+    .container__memes__edit{
+        width: 80%;
+    }
     /* Edit - Top text - Bottom text */
     .transition{
         transition: 0.5s;
