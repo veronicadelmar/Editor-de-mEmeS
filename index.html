@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crea los mejores memes, edita y descarga tus creaciones">
+    <meta name="keywords" content="Meme, meme, Memes, memes, editor de memes, creador de memes, descarga tu propio memes">
+    <!-- Title -->
+    <title>Editor de Memes xD!</title>
+    <!-- Icon -->
+    <link rel="shortcut icon" href="./img/creadorDeMemes-icon.png" type="image/x-icon">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700,900&display=swap" rel="stylesheet">
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- My styles -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<!-- _________ BODY _________ -->
+<body>
+    <!-- _________ HEADER _________ -->
+    <header>
+        <h1>Generador de Memes</h1>
+        <!-- Navbar -->
+        <nav class="container__nav">
+            <!-- Image button -->
+            <button id="btn__img" class="btn__nav focus hover btn__transition">
+                <i class="fa-regular fa-file-image"></i>
+                Imagen
+            </button>
+            <!-- Text button -->
+            <button id="btn__text" class="btn__nav focus hover btn__transition">
+                <i class="fa-solid fa-font"></i>
+                Texto
+            </button>
+            <!-- Dark button -->
+            <button id="btn__dark" class="btn__nav focus hover btn__transition">
+                <i class="fa-regular fa-lightbulb"></i>
+                Modo oscuro
+            </button>
+            <!-- Light button -->
+            <button id="btn__light" class="btn__nav focus hover btn__transition hidden">
+                <i class="fa-solid fa-lightbulb"></i>
+                Modo claro
+            </button>
+        </nav>
+    </header>
+    <!-- _________ MAIN ________ -->
+    <main class="container">
+        <!-- Container memes -->
+        <section class="container__memes">
+            <!-- Container memes canvas -->
+            <section class="container__memes--canvas">
+                <!-- Top text -->
+                <p class="text__editor">TOP TEXT</p>
+                <!-- IMAGEN URL -->
+                <figure>
+                  <img src="" alt="">
+                IMAGEN
+                </figure>
+                <!-- Bottom text -->
+                <p class="text__editor">BOTTOM TEXT</p>
+            </section>
+            <!-- Button download -->
+            <button id="button__download" class="btn__transition">
+                <i class="fa-solid fa-download"></i>
+                Descargar meme
+            </button>
+        </section>
+    </main>
+    <!-- _________ ASIDE - Image panel ________ -->
+    <aside class="panels hidden image__panel">
+        <!-- btn X (close) - Image panel -->
+        <button class="btn__panel--close btn__transition btn__imagen__panel--close">
+            <i class="fas fa-times hover" aria-hidden="true"></i>
+        </button>
+        <section>
+            <!-- Sub title - Image  -->
+            <h2 class="second__title">imagen</h2>
+            <!-- Url -->
+            <h3 class="third__title">url</h3>
+            <input type="text" name="text" class="input__get focus hover transition">
+            <!-- Background -->
+            <h3 class="third__title">fondo</h3>
+            <section id="container__background">
+                <button>
+                    <input type="color" name="background" id="background" class="btn__transition">
+                    <span id="id__color">#FFFFF</span>
+                </button>
+                <!-- Background selector -->
+                <select name="select" class="bg__select focus hover transition">
+                    <option value="unset">Ninguno</option>
+                    <option value="lighten">Aclarar</option>
+                    <option value="darken">Oscurecer</option>
+                    <option value="difference">Diferencia</option>
+                    <option value="luminosity">Luminosidad</option>
+                    <option value="multiply">Multiplicar</option>
+                </select>
+            </section>
+            <!-- Filters panel -->
+            <section>
+                <h3 class="third__title">filtros</h3>
+                <!-- Brightness -->
+                <article class="filter">
+                    <label for="">brillo</label>
+                    <input type="range" name="" id="range" value="100">
+                </article>
+                <!-- Opacity -->
+                <article class="filter">
+                    <label for="">opacidad</label>
+                    <input type="range" name="" id="range" value="100">
+                </article>
+                <!-- Contrast -->
+                <article class="filter">
+                    <label for="">contraste</label>
+                    <input type="range" name="" id="range" value="0">
+                </article>
+                <!-- Unfocused -->
+                <article class="filter">
+                    <label for="">desenfoque</label>
+                    <input type="range" name="" id="range" value="0">
+                </article>
+                <!-- Grayscale -->
+                <article class="filter">
+                    <label for="">escala de grises</label>
+                    <input type="range" name="" id="range" value="0">
+                </article>
+                <!-- Sepia -->
+                <article class="filter">
+                    <label for="">sepia</label>
+                    <input type="range" name="" id="range" value="0">
+                </article>
+                <!-- Hue -->
+                <article class="filter">
+                    <label for="">hue</label>
+                    <input type="range" name="" id="range" value="0">
+                </article>
+                <!-- Saturation -->
+                <article class="filter">
+                    <label for="">saturado</label>
+                    <input type="range" name="" id="range" value="0">
+                </article>
+                <!-- Negative -->
+                <article class="filter">
+                    <label for="">negativo</label>
+                    <input type="range" name="" id="range" value="0">
+                </article>
+                <!-- Button reset -->
+                <button type="reset" class="focus hover btn__transition">
+                    Reestablecer filtros
+                </button>
+            </section>
+        </section>
+    </aside>
+    <!-- _________ASIDE - Text panel ________ -->
+    <aside class="panels hidden text__panel">
+        <!-- btn X (close) - Text panel -->
+        <button class="btn__panel--close btn__transition btn__text__panel--close">
+            <i class="fas fa-times hover" aria-hidden="true"></i>
+        </button>
+        <!-- Sub title - Text  -->
+        <h2 class="second__title">texto</h2>
+        <!-- Edit - Top text -->
+        <h3 class="third__title">superior</h3>
+        <input type="text" name="text" class="input__get focus hover transition">
+        <input type="checkbox" name="" id="">
+        <label for="" class="label__size">Sin texto superior</label>
+        <!-- Edit - Buttom text -->
+        <h3 class="third__title">inferior</h3>
+        <input type="text" name="text" class="input__get focus hover transition">
+        <input type="checkbox" name="" id="">
+        <label for="" class="label__size" >Sin texto inferior</label>
+        <!-- Font -->
+        <section>
+            <h3 class="third__title">fuente</h3>
+            <select name="" class="font__select focus hover transition">
+                <option value="Arial">Arial</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="American Typewrite">American Typewrite</option>
+                <option value="Andale Mono">Andale Mono</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Impact">Impact</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Times New Roman">Times New Roman</option>
+            </select>
+            <section class="font__size">
+                <input type="number" name="number" class="size focus hover transition">
+                <button class="btn__size left focus hover btn__transition">
+                    <i class="fas fa-align-left" aria-hidden="true"></i>
+                </button>
+                <button class="btn__size center focus hover btn__transition">
+                    <i class="fas fa-align-center" aria-hidden="true"></i>
+                </button>
+                <button class="btn__size right focus hover btn__transition">
+                    <i class="fas fa-align-right" aria-hidden="true"></i>
+                </button>
+            </section>
+            <!-- Font - color -->
+            <section class="container__font">
+                <article id="text__color">
+                    <h3 class="third__title">color</h3>
+                    <button id="text__color">
+                        <input type="color" name="background">
+                        <span id="id__color">#000000</span>
+                    </button>
+                </article>
+                <!-- Bg - color -->
+                <article id="font__color">
+                    <h3 class="third__title">fondo</h3>
+                    <button>
+                        <input type="color" name="background">
+                        <span id="id__color">#FFFFF</span>
+                    </button>
+                </article>
+            </section>
+            <!-- fondo transparente -->
+            <section class="container__check">
+                <input type="checkbox" name="" id="">
+                <label for="" class="label__size">Fondo transparente</label>
+            </section>
+            <!-- Outline -->
+            <section class="panel__outline">
+                <h3 class="third__title">contorno</h3>
+                <button class="ninguno focus hover btn__transition">Ninguno</button>
+                <button class="claro focus hover btn__transition">Claro</button>
+                <button class="oscuro focus hover btn__transition">Oscuro</button>
+            </section>
+            <!-- Spacing -->
+            <section>
+                <h3 class="third__title">espaciado</h3>
+                <input type="number" name="" id="" class="input__get hover transition">
+            </section>
+            <!-- Leading -->
+            <section>
+                <h3 class="third__title">Interlineado</h3>
+                <select name="" class="input__get hover transition">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </section>
+        </section>
+    </aside>
+    <!-- <footer><h4 class="white">Hecho con <i class="fa-solid fa-heart" aria-hidden="true"></i> por @unachamaqueprograma</h4></footer> -->
+    <script src="./js/main.js"></script>
+</body>
+</html>
