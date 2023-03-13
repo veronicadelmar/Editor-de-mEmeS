@@ -51,7 +51,7 @@
     <main class="container">
         <!-- Container memes -->
         <section class="container__memes">
-            <!-- Container memes canvas -->
+            <!-- Container memes editor -->
             <section class="container__memes__edit">
                 <!-- Top text -->
                 <p class="text__editor top__text">TOP TEXT</p>
@@ -85,17 +85,17 @@
             <h3 class="third__title">fondo</h3>
             <section id="container__background">
                 <button>
-                    <input type="color" name="background" id="btn__bgimagen" class="btn__transition">
-                    <span id="bgimagen__span">#FFFFF</span>
+                    <input type="color" name="background" id="btn__bgimagen" class="btn__transition" value="#FFFFFF">
+                    <span id="bgimagen__span">#FFFFFF</span>
                 </button>
                 <!-- Background selector -->
-                <select name="select" class="bg__select focus hover transition">
-                    <option value="unset">Ninguno</option>
-                    <option value="lighten">Aclarar</option>
-                    <option value="darken">Oscurecer</option>
-                    <option value="difference">Diferencia</option>
-                    <option value="luminosity">Luminosidad</option>
-                    <option value="multiply">Multiplicar</option>
+                <select name="select" id="select__bg" class="bg__select focus hover transition">
+                    <option value="unset" id="unset">Ninguno</option>
+                    <option value="lighten" id="lighten">Aclarar</option>
+                    <option value="darken" id="darken">Oscurecer</option>
+                    <option value="difference" id="difference">Diferencia</option>
+                    <option value="luminosity" id="luminosity">Luminosidad</option>
+                    <option value="multiply" id="multiply">Multiplicar</option>
                 </select>
             </section>
             <!-- Filters panel -->
@@ -104,47 +104,47 @@
                 <!-- Brightness -->
                 <article class="filter">
                     <label for="">brillo</label>
-                    <input type="range" name="" id="range" value="100">
+                    <input type="range" name="glow" class="glow" id="range" value="100" min="0" max="100">
                 </article>
                 <!-- Opacity -->
                 <article class="filter">
                     <label for="">opacidad</label>
-                    <input type="range" name="" id="range" value="100">
+                    <input type="range" name="opacity" class="opacity" id="range" value="100" min="0" max="100">
                 </article>
                 <!-- Contrast -->
                 <article class="filter">
                     <label for="">contraste</label>
-                    <input type="range" name="" id="range" value="0">
+                    <input type="range" name="contrast" class="contrast" id="range" value="0" min="100" max="1000">
                 </article>
                 <!-- Unfocused -->
                 <article class="filter">
                     <label for="">desenfoque</label>
-                    <input type="range" name="" id="range" value="0">
+                    <input type="range" name=blur" class="blur" id="range" value="0" min="0" max="10">
                 </article>
                 <!-- Grayscale -->
                 <article class="filter">
                     <label for="">escala de grises</label>
-                    <input type="range" name="" id="range" value="0">
+                    <input type="range" name="grayscale" class="grayscale" id="range" value="0" min="0" max="100">
                 </article>
                 <!-- Sepia -->
                 <article class="filter">
                     <label for="">sepia</label>
-                    <input type="range" name="" id="range" value="0">
+                    <input type="range" name="sepia" class="sepia" id="range" value="0" min="0" max="100">
                 </article>
                 <!-- Hue -->
                 <article class="filter">
                     <label for="">hue</label>
-                    <input type="range" name="" id="range" value="0">
+                    <input type="range" name="hue" class="hue" id="range" value="0" min="0" max="369">
                 </article>
                 <!-- Saturation -->
                 <article class="filter">
                     <label for="">saturado</label>
-                    <input type="range" name="" id="range" value="0">
+                    <input type="range" name="crowded" class="crowded" id="range" value="0" min="100" max="1000">
                 </article>
                 <!-- Negative -->
                 <article class="filter">
                     <label for="">negativo</label>
-                    <input type="range" name="" id="range" value="0">
+                    <input type="range" name="negative" class="negative" id="range" value="0" min="0" max="100">
                 </article>
                 <!-- Button reset -->
                 <button type="reset" class="focus hover btn__transition">
@@ -202,7 +202,7 @@
                 <article id="text__color">
                     <h3 class="third__title">color</h3>
                     <button>
-                        <input type="color" name="color__text" id="color__text">
+                        <input type="color" name="color__text" id="color__text" value="#000000">
                         <span id="color__text__span">#000000</span>
                     </button>
                 </article>
@@ -210,14 +210,14 @@
                 <article id="font__color">
                     <h3 class="third__title">fondo</h3>
                     <button>
-                        <input type="color" name="background__text" id="bg__font">
-                        <span id="bg__font__span">#FFFFF</span>
+                        <input type="color" name="background__text" id="bg__font" value="#FFFFFF">
+                        <span id="bg__font__span">#FFFFFF</span>
                     </button>
                 </article>
             </section>
             <!-- fondo transparente -->
             <section class="container__check">
-                <input type="checkbox" name="checkbox" id="check__text__bg">
+                <input type="checkbox" name="checkbox" id="check__transparent">
                 <label for="" class="label__size">Fondo transparente</label>
             </section>
             <!-- Outline -->

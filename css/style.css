@@ -31,7 +31,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
 }
 .hidden{
     display: none;
@@ -117,11 +116,25 @@ h1{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 40px 20px;
+    padding: 40px 0;
 }
-/* Container memes canvas */
+/* Container memes editor */
 .container__memes__edit{
     width: 85%;
+}
+/* IMAGEN URL */
+figure{
+    width: 100%;
+    height: 210px; 
+}
+#image__meme{
+    background-blend-mode: difference;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    object-position: top;
+    /* background-size: cover; */
 }
 /* Texts to edit */
 .text__editor{
@@ -129,18 +142,13 @@ h1{
     font-size: 1rem;
     font-weight: 900;
     text-align: center;
-    background-color: white;
 }
-/* IMAGEN URL */
-figure{
-    background-color: black;
-    width: 100%;
-    height: 200px;
+.top__text{
+    position: static;
 }
-#image__meme{
-    background-blend-mode: unset;
+.bottom__text{
+    position: static;
 }
-
 /* Button download */
 #button__download{
     padding: 15px;
@@ -296,6 +304,9 @@ input[type="checkbox"]{
     color: var(--color--primary);
     width: 130px;
 }
+.color__text{
+    background-color: black;
+}
 #text__color input::-webkit-color-swatch{
     display: none;
 }
@@ -323,7 +334,7 @@ footer{
     display: none;
 }
 /* _________ Responsive 760px _____________*/
-@media (min-width: 760px){
+@media (min-width: 720px){
     /* _________ HEADER _________ */
     h1{
         font-size: 2.2rem;
@@ -336,10 +347,14 @@ footer{
     .container__memes{
        padding: 0 50px 10px;
     }
+    /* Container memes editor */
+    .container__memes__edit{
+        width: 95%;
+    }
     /* Top text - Bottom text */
     .text__editor{
-        padding: 15px 50px;
-        font-size: 2.3rem;
+        padding: 35px 50px;
+        font-size: 2.7rem;
     }
     /* IMAGEN URL */
     figure{

@@ -56,6 +56,7 @@ $(".btn__text__panel--close").addEventListener("click", () =>{
     $(".text__panel").style.display = "none"
 })
 // _________ MAIN _________
+$("figure").style.backgroundColor = "black"
 // IMAGEN URL
 $("#url__image").addEventListener("input", () =>{
     $("#image__meme").src = $("#url__image").value
@@ -70,37 +71,87 @@ $("#btn__bgimagen").addEventListener("input", () =>{
     $("#btn__bgimagen").style.backgroundColor = $("#btn__bgimagen").value
 })
 // Background selector   TERMINAR
+$("#select__bg").addEventListener("change", () =>{
+    if($("#lighten").checked){
+        $("#image__meme").style.backgroundBlendMode = "lighten".value
+    }
+})
+// ____Filters panel
+//  Brightness
+$(".glow").addEventListener("change", () =>{
+    const range__glow = $(".glow").value
+    $("#image__meme").style.filter = `brightness(${range__glow}%)`
+})
+//  Opacity
+$(".opacity").addEventListener("change", () =>{
+    const range__opacity = $(".opacity").value
+    $("#image__meme").style.filter = `opacity(${range__opacity}%)`
+})
+//  Contrast
+$(".contrast").addEventListener("change", () =>{
+    const range__contrast = $(".contrast").value
+    $("#image__meme").style.filter = `contrast(${range__contrast}%)`
+})
+//  Unfocused
+$(".blur").addEventListener("change", () =>{
+    const range__blur = $(".blur").value
+    $("#image__meme").style.filter = `blur(${range__blur}px)`
+})
+//  Grayscale
+$(".grayscale").addEventListener("change", () =>{
+    const range__grayscale = $(".grayscale").value
+    $("#image__meme").style.filter = `grayscale(${range__grayscale}%)`
+})
+//  Sepia
+$(".sepia").addEventListener("change", () =>{
+    const range__sepia = $(".sepia").value
+    $("#image__meme").style.filter = `sepia(${range__sepia}%)`
+})
+//  Hue
+$(".hue").addEventListener("change", () =>{
+    const range__hue = $(".hue").value
+    $("#image__meme").style.filter = `hue-rotate(${range__hue}deg)`
+})
+//  Saturation
+$(".crowded").addEventListener("change", () =>{
+    const range__crowded = $(".crowded").value
+    $("#image__meme").style.filter = `saturate(${range__crowded}%)`
+})
+//  Negative
+$(".negative").addEventListener("change", () =>{
+    const range__negative = $(".negative").value
+    $("#image__meme").style.filter = `invert(${range__negative}%)`
+})
 
 
 
 
 // _________ ASIDE - Text panel
 // text top
+$(".top__text").style.backgroundColor = "white"
 $("#input__text__top").addEventListener("input", ()=>{
     $(".top__text").innerText = $("#input__text__top").value
 })
 // text top - disappear     MEJORAR
 $("#check__text__top").addEventListener("change", ()=>{
-    $(".top__text").style.color = $("#btn__bgimagen").value
-    $(".top__text").style.backgroundColor = $("#btn__bgimagen").value
-    if (!$("#check__text__top").checked){
-        $(".top__text").style.color = $("#color__text").value
-        $(".top__text").style.backgroundColor = $("#bg__font").value
+    $(".top__text").classList.remove("hidden")
+    if ($("#check__text__top").checked){
+        $(".top__text").classList.add("hidden")
     }
 })
 // text bottom
+$(".bottom__text").style.backgroundColor = "white"
 $("#input__text__bottom").addEventListener("input", ()=>{
     $(".bottom__text").innerText = $("#input__text__bottom").value
 })
-// text bottom - disappear    MEJORAR
+// // text bottom - disappear    MEJORAR
 $("#check__text__bottom").addEventListener("change", ()=>{
-    $(".bottom__text").style.color = $("#btn__bgimagen").value
-    $(".bottom__text").style.backgroundColor = $("#btn__bgimagen").value
-    if (!$("#check__text__bottom").checked){
-        $(".bottom__text").style.color = $("#color__text").value
-        $(".bottom__text").style.backgroundColor = $("#bg__font").value
+    $(".bottom__text").classList.remove("hidden")
+    if ($("#check__text__bottom").checked){
+        $(".bottom__text").classList.add("hidden")
     }
 })
+
 
 
 // Unified EVENT - text top AND text - color and backgroundColor
@@ -110,6 +161,7 @@ $("#color__text").addEventListener("input", () =>{
     $("#color__text__span").innerText = ($("#color__text").value).toUpperCase()
     $("#color__text").style.backgroundColor = $("#color__text").value
 })
+
 $("#bg__font").addEventListener("input", () =>{
     $(".top__text").style.backgroundColor = $("#bg__font").value
     $(".bottom__text").style.backgroundColor = $("#bg__font").value
@@ -117,17 +169,16 @@ $("#bg__font").addEventListener("input", () =>{
     $("#bg__font").style.backgroundColor = $("#bg__font").value
 })
 
-// Checkbox hidden background text MEJORAR
-$("#check__text__bg").addEventListener("change", () =>{
-    $(".top__text").style.backgroundColor = $("#btn__bgimagen").value
-    $(".bottom__text").style.backgroundColor = $("#btn__bgimagen").value
-    $(".top__text").style.color = $("#btn__bgimagen").value
-    $(".bottom__text").style.color = $("#btn__bgimagen").value
-    if (!$("#check__text__bg").checked){
-        $(".top__text").style.backgroundColor = $("#bg__font").value
-        $(".bottom__text").style.backgroundColor = $("#bg__font").value
-        $(".top__text").style.color = $("#color__text").value
-        $(".bottom__text").style.color = $("#color__text").value
+// Checkbox transparent background text MEJORAR
+$("#check__transparent").addEventListener("change", () =>{
+    $(".top__text").style.backgroundColor = $("#bg__font").value
+    $(".bottom__text").style.backgroundColor = $("#bg__font").value
+    if ($("#check__transparent").checked){
+        $(".top__text").style.backgroundColor = "transparent"
+        $(".bottom__text").style.backgroundColor = "transparent"
     }
 })
-
+// $(".top__text").style.backgroundColor = $("#bg__font").value
+    // $(".bottom__text").style.backgroundColor = $("#bg__font").value
+    // $(".top__text").style.color = $("#btn__bgimagen").value
+    // $(".bottom__text").style.color = $("#btn__bgimagen").value
