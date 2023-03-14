@@ -121,6 +121,7 @@ h1{
 /* Container memes editor */
 .container__memes__edit{
     width: 85%;
+    background-color: black;
 }
 /* IMAGEN URL */
 figure{
@@ -128,13 +129,7 @@ figure{
     height: 210px; 
 }
 #image__meme{
-    background-blend-mode: difference;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
-    object-position: top;
-    /* background-size: cover; */
 }
 /* Texts to edit */
 .text__editor{
@@ -230,7 +225,7 @@ span{
     text-transform: uppercase;
     font-size: 0.8rem;
 }
-#range{
+.range{
     width: 100%;
     height: 6px;
     background-color: var(--bg--ranger);

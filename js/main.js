@@ -56,7 +56,6 @@ $(".btn__text__panel--close").addEventListener("click", () =>{
     $(".text__panel").style.display = "none"
 })
 // _________ MAIN _________
-$("figure").style.backgroundColor = "black"
 // IMAGEN URL
 $("#url__image").addEventListener("input", () =>{
     $("#image__meme").src = $("#url__image").value
@@ -66,27 +65,41 @@ $("#url__image").addEventListener("input", () =>{
 // _________ ASIDE - Image panel
 // Background image
 $("#btn__bgimagen").addEventListener("input", () =>{
-    $("figure").style.backgroundColor = $("#btn__bgimagen").value
+    $("#image__meme").style.backgroundColor = $("#btn__bgimagen").value
     $("#bgimagen__span").innerText = ($("#btn__bgimagen").value).toUpperCase()
-    $("#btn__bgimagen").style.backgroundColor = $("#btn__bgimagen").value
+    $("btn__bgimagen").style.backgroundColor = $("#btn__bgimagen").value
 })
 // Background selector   TERMINAR
-$("#select__bg").addEventListener("change", () =>{
-    if($("#lighten").checked){
-        $("#image__meme").style.backgroundBlendMode = "lighten".value
-    }
+$("#select__bg").addEventListener("click", () =>{
+    $("#image__meme").style.backgroundBlendMode = $("#select__bg").value
 })
+
+
+
+
+
+
+
+
 // ____Filters panel
+const range = () =>{
+    // $("#image__meme").style.filter = `brightness(${$(".glow").value}) opacity(${$(".opacity").value})`
+    $("#image__meme").style.filter = `brightness($(".glow").value) opacity($(".opacity").value)`
+}
+$(".range").addEventListener("change", range)
+
+
+
 //  Brightness
-$(".glow").addEventListener("change", () =>{
-    const range__glow = $(".glow").value
-    $("#image__meme").style.filter = `brightness(${range__glow}%)`
-})
+// $(".glow").addEventListener("change", () =>{
+//     const range__glow = $(".glow").value
+//     $("#image__meme").style.filter = `brightness(${range__glow}%)`
+// })
 //  Opacity
-$(".opacity").addEventListener("change", () =>{
-    const range__opacity = $(".opacity").value
-    $("#image__meme").style.filter = `opacity(${range__opacity}%)`
-})
+// $(".opacity").addEventListener("change", () =>{
+//     const range__opacity = $(".opacity").value
+//     $("#image__meme").style.filter = `opacity(${range__opacity}%)`
+// })
 //  Contrast
 $(".contrast").addEventListener("change", () =>{
     const range__contrast = $(".contrast").value
@@ -171,11 +184,13 @@ $("#bg__font").addEventListener("input", () =>{
 
 // Checkbox transparent background text MEJORAR
 $("#check__transparent").addEventListener("change", () =>{
-    $(".top__text").style.backgroundColor = $("#bg__font").value
-    $(".bottom__text").style.backgroundColor = $("#bg__font").value
+    $(".top__text").style.backgroundColor = $("#image__meme").value
+    $(".bottom__text").style.backgroundColor = $("#image__meme").value
+
     if ($("#check__transparent").checked){
-        $(".top__text").style.backgroundColor = "transparent"
-        $(".bottom__text").style.backgroundColor = "transparent"
+        $(".top__text").style.background = "transparent"
+        $(".bottom__text").style.background = "transparent"
+        $(".container__memes__edit").style.backgroundImage = $("#input__text__top").value
     }
 })
 // $(".top__text").style.backgroundColor = $("#bg__font").value
