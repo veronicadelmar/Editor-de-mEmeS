@@ -11,7 +11,7 @@ $("#btn__dark").addEventListener("click", () =>{
         $("#btn__light").classList.remove("hidden")
         $("#btn__dark").classList.add("hidden")
         $("body").setAttribute("data-theme", "light__theme")
-    }else if ($("#btn__light") === current__dark) {
+    }else if ($("#btn__light") === current__dark ) {
         $("#btn__light").classList.add("hidden")
         $("#btn__dark").classList.remove("hidden")
         $("body").removeAttribute("data-theme", "light__theme")
@@ -75,57 +75,33 @@ $("#select__bg").addEventListener("click", () =>{
 })
 // ____Filters panel
 const range = () =>{
-    $("#image__meme").style.filter = `brightness(${$(".glow").value})`
-    $("#image__meme").style.filter = `opacity(${$(".opacity").value})`
+    $("#image__meme").style.filter = `brightness(${$(".glow").value}) opacity(${$(".opacity").value}) contrast(${$(".contrast").value}%) blur(${$(".blur").value}px) grayscale(${$(".grayscale").value}%) sepia(${$(".sepia").value}%) hue-rotate(${$(".hue").value}deg) saturate(${$(".crowded").value}%) invert(${$(".negative").value}%)`
 }
-$(".range").addEventListener("input", range) 
-
-
 //  Brightness
-// $(".glow").addEventListener("change", () =>{
-//     const range__glow = $(".glow").value
-//     $("#image__meme").style.filter = `brightness(${range__glow}%)`
-// })
+$(".glow").addEventListener("change", range)
 //  Opacity
-// $(".opacity").addEventListener("change", () =>{
-//     const range__opacity = $(".opacity").value
-//     $("#image__meme").style.filter = `opacity(${range__opacity}%)`
-// })
+$(".opacity").addEventListener("change", range) 
 //  Contrast
-$(".contrast").addEventListener("change", () =>{
-    const range__contrast = $(".contrast").value
-    $("#image__meme").style.filter = `contrast(${range__contrast}%)`
-})
+$(".contrast").addEventListener("change", range)
 //  Unfocused
-$(".blur").addEventListener("change", () =>{
-    const range__blur = $(".blur").value
-    $("#image__meme").style.filter = `blur(${range__blur}px)`
-})
+$(".blur").addEventListener("change", range)
 //  Grayscale
-$(".grayscale").addEventListener("change", () =>{
-    const range__grayscale = $(".grayscale").value
-    $("#image__meme").style.filter = `grayscale(${range__grayscale}%)`
-})
+$(".grayscale").addEventListener("change", range)
 //  Sepia
-$(".sepia").addEventListener("change", () =>{
-    const range__sepia = $(".sepia").value
-    $("#image__meme").style.filter = `sepia(${range__sepia}%)`
-})
+$(".sepia").addEventListener("change", range)
 //  Hue
-$(".hue").addEventListener("change", () =>{
-    const range__hue = $(".hue").value
-    $("#image__meme").style.filter = `hue-rotate(${range__hue}deg)`
-})
+$(".hue").addEventListener("change", range)
 //  Saturation
-$(".crowded").addEventListener("change", () =>{
-    const range__crowded = $(".crowded").value
-    $("#image__meme").style.filter = `saturate(${range__crowded}%)`
-})
+$(".crowded").addEventListener("change", range)
 //  Negative
-$(".negative").addEventListener("change", () =>{
-    const range__negative = $(".negative").value
-    $("#image__meme").style.filter = `invert(${range__negative}%)`
-})
+$(".negative").addEventListener("change", range)
+
+
+
+// $(".negative").addEventListener("change", () =>{
+//     const range__negative = $(".negative").value
+//     $("#image__meme").style.filter = `invert(${range__negative}%)`
+// })
 // Button reset NO ME FUNCIONA
 const btn__reset__filters = () =>{
     const range = $('input[type="range"]')
