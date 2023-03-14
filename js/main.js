@@ -67,27 +67,17 @@ $("#url__image").addEventListener("input", () =>{
 $("#btn__bgimagen").addEventListener("input", () =>{
     $("#image__meme").style.backgroundColor = $("#btn__bgimagen").value
     $("#bgimagen__span").innerText = ($("#btn__bgimagen").value).toUpperCase()
-    $("btn__bgimagen").style.backgroundColor = $("#btn__bgimagen").value
+    $("#btn__bgimagen").style.backgroundColor = $("#btn__bgimagen").value
 })
-// Background selector   TERMINAR
+// Background selector  (it does not take the changes in the image, but it does take the changes through the console)
 $("#select__bg").addEventListener("click", () =>{
     $("#image__meme").style.backgroundBlendMode = $("#select__bg").value
 })
-
-
-
-
-
-
-
-
 // ____Filters panel
 const range = () =>{
-    // $("#image__meme").style.filter = `brightness(${$(".glow").value}) opacity(${$(".opacity").value})`
-    $("#image__meme").style.filter = `brightness($(".glow").value) opacity($(".opacity").value)`
+    $("#image__meme").style.filter = `brightness(${$(".glow").value}) opacity(${$(".opacity").value})`
 }
-$(".range").addEventListener("change", range)
-
+$(".range").addEventListener("input", range) 
 
 
 //  Brightness
@@ -135,7 +125,12 @@ $(".negative").addEventListener("change", () =>{
     const range__negative = $(".negative").value
     $("#image__meme").style.filter = `invert(${range__negative}%)`
 })
-
+// Button reset NO ME FUNCIONA
+const btn__reset__filters = () =>{
+    const range = $('input[type="range"]')
+    range.value = range.defaultValue
+}
+$(".btn__reset__filters").addEventListener("click", btn__reset__filters)
 
 
 

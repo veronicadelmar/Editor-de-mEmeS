@@ -99,27 +99,27 @@
                 </select>
             </section>
             <!-- Filters panel -->
-            <section>
+            <form>
                 <h3 class="third__title">filtros</h3>
                 <!-- Brightness -->
                 <article class="filter">
                     <label for="">brillo</label>
-                    <input type="range" name="glow" class="glow range" value="100" min="0" max="100">
+                    <input type="range" name="glow" class="glow range" value="1" min="0" max="1" step="0.1">
                 </article>
                 <!-- Opacity -->
                 <article class="filter">
                     <label for="">opacidad</label>
-                    <input type="range" name="opacity" class="opacity range" value="100" min="0" max="100">
+                    <input type="range" name="opacity" class="opacity range" value="1" min="0" max="1" step="0.1">
                 </article>
                 <!-- Contrast -->
                 <article class="filter">
                     <label for="">contraste</label>
-                    <input type="range" name="contrast" class="contrast range"  value="0" min="100" max="1000">
+                    <input type="range" name="contrast" class="contrast range" outline = "0"  value="100" min="100" max="1000">
                 </article>
                 <!-- Unfocused -->
                 <article class="filter">
                     <label for="">desenfoque</label>
-                    <input type="range" name=blur" class="blur range"  value="0" min="0" max="10">
+                    <input type="range" name=blur" class="blur range"  value="0" min="0" max="10" step="0.1">
                 </article>
                 <!-- Grayscale -->
                 <article class="filter">
@@ -147,10 +147,10 @@
                     <input type="range" name="negative" class="negative range" value="0" min="0" max="100">
                 </article>
                 <!-- Button reset -->
-                <button type="reset" class="focus hover btn__transition">
+                <button type="reset" class="focus hover btn__transition btn__reset__filters">
                     Reestablecer filtros
                 </button>
-            </section>
+            </form>
         </section>
     </aside>
     <!-- _________ASIDE - Text panel ________ -->
