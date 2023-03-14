@@ -7,11 +7,11 @@ const num = 5
 // Dark button - Mode change
 $("#btn__dark").addEventListener("click", () =>{
     const current__dark = $("body").getAttribute("data-theme")
-    if ("#btn__dark"){
+    if ($("#btn__dark") != current__dark){
         $("#btn__light").classList.remove("hidden")
         $("#btn__dark").classList.add("hidden")
         $("body").setAttribute("data-theme", "light__theme")
-    }else if ("#btn__light") {
+    }else if ($("#btn__light") === current__dark) {
         $("#btn__light").classList.add("hidden")
         $("#btn__dark").classList.remove("hidden")
         $("body").removeAttribute("data-theme", "light__theme")
@@ -20,11 +20,11 @@ $("#btn__dark").addEventListener("click", () =>{
 // Light button - Mode change
 $("#btn__light").addEventListener("click", () =>{
     const current__light = $("body").getAttribute("data-theme")
-    if ("#btn__light"){
+    if ($("#btn__light") != current__light){
         $("#btn__dark").classList.remove("hidden")
         $("#btn__light").classList.add("hidden")
         $("body").removeAttribute("data-theme", "light__theme")
-    }else if ("#btn__light") {
+    }else if ($("#btn__light") === current__light) {
         $("#btn__dark").classList.add("hidden")
         $("#btn__light").classList.remove("hidden")
         $("body").setAttribute("data-theme", "light__theme")
@@ -75,7 +75,8 @@ $("#select__bg").addEventListener("click", () =>{
 })
 // ____Filters panel
 const range = () =>{
-    $("#image__meme").style.filter = `brightness(${$(".glow").value}) opacity(${$(".opacity").value})`
+    $("#image__meme").style.filter = `brightness(${$(".glow").value})`
+    $("#image__meme").style.filter = `opacity(${$(".opacity").value})`
 }
 $(".range").addEventListener("input", range) 
 
