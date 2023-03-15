@@ -1,32 +1,23 @@
 // Universal selector
 const $ = (selector) => document.querySelector(selector)
 // _________ HEADER _________
-// Dark button - Mode change
-$("#btn__dark").addEventListener("click", () =>{
+// Mode change
+const change__theme = () => {
     const current__dark = $("body").getAttribute("data-theme")
-    if ($("body") != current__dark){
-        $("#btn__light").classList.remove("hidden")
-        $("#btn__dark").classList.add("hidden")
-        $("body").setAttribute("data-theme", "light__theme")
-    }else if ($("body") === current__dark ) {
-        $("#btn__light").classList.add("hidden")
-        $("#btn__dark").classList.remove("hidden")
-        $("body").removeAttribute("data-theme", "light__theme")
-    }
-})
-// Light button - Mode change
-$("#btn__light").addEventListener("click", () =>{
-    const current__light = $("body").getAttribute("data-theme")
-    if ($("body") != current__light){
-        $("#btn__dark").classList.remove("hidden")
-        $("#btn__light").classList.add("hidden")
-        $("body").removeAttribute("data-theme", "light__theme")
-    }else if ($("body") === current__light) {
+    if (current__dark === $("light__theme")){
         $("#btn__dark").classList.add("hidden")
         $("#btn__light").classList.remove("hidden")
         $("body").setAttribute("data-theme", "light__theme")
+    }else {
+        $("#btn__dark").classList.remove("hidden")
+        $("#btn__light").classList.add("hidden")
+        $("body").removeAttribute("data-theme", "light__theme")
     }
-})
+}
+// Dark button
+$("#btn__dark").addEventListener("click", change__theme)
+// Light button
+$("#btn__light").addEventListener("click", change__theme)
 // BTN - Image and Text
 // _________ ASIDE - Image panel - appear ________
 $("#btn__img").addEventListener("click", () =>{
