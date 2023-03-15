@@ -312,7 +312,7 @@ input[type="checkbox"]{
     color: var(--color--primary);
     width: 130px;
 }
-.color__text{
+#color__text{
     background-color: black;
 }
 #text__color input::-webkit-color-swatch{
@@ -345,7 +345,6 @@ input[type="checkbox"]{
     /* Container memes editor */
     .container__memes__edit{
         height: 385px;
-        width: 100%;
         max-width: 385px;
     }
     /* Texts to edit */
@@ -363,7 +362,6 @@ input[type="checkbox"]{
     /* Container memes editor */
     .container__memes__edit{
         height: 485px;
-        width: 100%;
         max-width: 485px;
     }
     /* Texts to edit */
@@ -376,7 +374,6 @@ input[type="checkbox"]{
     /* Container memes editor */
     .container__memes__edit{
         height: 585px;
-        width: 100%;
         max-width: 600px;
     }
 }

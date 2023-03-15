@@ -4,11 +4,11 @@ const $ = (selector) => document.querySelector(selector)
 // Dark button - Mode change
 $("#btn__dark").addEventListener("click", () =>{
     const current__dark = $("body").getAttribute("data-theme")
-    if ($("#btn__dark") != current__dark){
+    if ($("body") != current__dark){
         $("#btn__light").classList.remove("hidden")
         $("#btn__dark").classList.add("hidden")
         $("body").setAttribute("data-theme", "light__theme")
-    }else if ($("#btn__light") === current__dark ) {
+    }else if ($("body") === current__dark ) {
         $("#btn__light").classList.add("hidden")
         $("#btn__dark").classList.remove("hidden")
         $("body").removeAttribute("data-theme", "light__theme")
@@ -17,11 +17,11 @@ $("#btn__dark").addEventListener("click", () =>{
 // Light button - Mode change
 $("#btn__light").addEventListener("click", () =>{
     const current__light = $("body").getAttribute("data-theme")
-    if ($("#btn__light") != current__light){
+    if ($("body") != current__light){
         $("#btn__dark").classList.remove("hidden")
         $("#btn__light").classList.add("hidden")
         $("body").removeAttribute("data-theme", "light__theme")
-    }else if ($("#btn__light") === current__light) {
+    }else if ($("body") === current__light) {
         $("#btn__dark").classList.add("hidden")
         $("#btn__light").classList.remove("hidden")
         $("body").setAttribute("data-theme", "light__theme")
@@ -54,8 +54,8 @@ $(".btn__text__panel--close").addEventListener("click", () =>{
 })
 // _________ MAIN _________
 // IMAGEN URL
-$("#url__image").addEventListener("change", () =>{
-    $("#image__meme").style.backgroundImage = $("#url__image").value
+$("#url__image").addEventListener("input", () =>{
+    $("#image__meme").style.backgroundImage = `url(${$("#url__image").value})`
 })
 // _________ ASIDE - Image panel
 // Background image
@@ -101,7 +101,8 @@ const btn__reset__filters = () =>{
     $(".sepia").value = "0"
     $(".hue").value = "0"
     $(".crowded").value = "0"
-    $("..negative").value = "0"
+    $(".negative").value = "0"
+    $("#image__meme").style.filter = "none"
 }
 $(".btn__reset__filters").addEventListener ("click", btn__reset__filters)
 // Button download
