@@ -106,7 +106,13 @@ const btn__reset__filters = () =>{
 }
 $(".btn__reset__filters").addEventListener ("click", btn__reset__filters)
 // Button download
-
+const download__meme = () =>{
+    domtoimage.toBlob($("#image__meme")).then((blob) => {
+        saveAs(blob, 'my__meme.png')
+      })
+}
+$("#button__download").addEventListener('click', download__meme)
+    
 
 
 
