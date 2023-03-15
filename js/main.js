@@ -107,6 +107,16 @@ const btn__reset__filters = () =>{
     $("..negative").value = "0"
 }
 $(".btn__reset__filters").addEventListener ("click", btn__reset__filters)
+// Button download
+
+
+
+
+
+
+
+
+
 // _________ ASIDE - Text panel
 // text top
 $(".top__text").style.backgroundColor = "white"
@@ -142,14 +152,12 @@ $("#color__text").addEventListener("input", () =>{
     $("#color__text__span").innerText = ($("#color__text").value).toUpperCase()
     $("#color__text").style.backgroundColor = $("#color__text").value
 })
-
 $("#bg__font").addEventListener("input", () =>{
     $(".top__text").style.backgroundColor = $("#bg__font").value
     $(".bottom__text").style.backgroundColor = $("#bg__font").value
     $("#bg__font__span").innerText = ($("#bg__font").value).toUpperCase()
     $("#bg__font").style.backgroundColor = $("#bg__font").value
 })
-
 // Checkbox transparent background text MEJORAR
 $("#check__transparent").addEventListener("change", () =>{
     $(".top__text").style.backgroundColor = $("#image__meme").value
@@ -165,3 +173,25 @@ $("#check__transparent").addEventListener("change", () =>{
     // $(".bottom__text").style.backgroundColor = $("#bg__font").value
     // $(".top__text").style.color = $("#btn__bgimagen").value
     // $(".bottom__text").style.color = $("#btn__bgimagen").value
+
+// Font
+
+
+
+// Outline
+// none
+$(".btn__none").addEventListener("click", () =>{
+    $(".top__text").style.textShadow = "none"
+    $(".bottom__text").style.textShadow = "none"
+})
+// clear
+$(".btn__clear").addEventListener("click", () =>{
+    $(".top__text").style.textShadow = `3px 3px #F0F0F0 , -3px -3px #F0F0F0, 3px -3px #F0F0F0, -3px 3px #F0F0F0`
+    $(".bottom__text").style.textShadow = `3px 3px #F0F0F0 , -3px -3px #F0F0F0, 3px -3px #F0F0F0, -3px 3px #F0F0F0`
+})
+// darken
+$(".btn__darken").addEventListener("click", () =>{
+    $(".top__text").style.textShadow = `2px 2px 2px #000000 , -2px -2px 2px #000000 , 2px -2px 2px #000000 , -2px 2px 2px #000000`
+    $(".bottom__text").style.textShadow = `2px 2px 2px #000000 , -2px -2px 2px #000000 , 2px -2px 2px #000000 , -2px 2px 2px #000000`
+})
+
