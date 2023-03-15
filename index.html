@@ -11,7 +11,9 @@
     <!-- Icon -->
     <link rel="shortcut icon" href="./img/creadorDeMemes-icon.png" type="image/x-icon">
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -76,16 +78,16 @@
             <h2 class="second__title">imagen</h2>
             <!-- Url -->
             <h3 class="third__title">url</h3>
-            <input type="url" name="text" class="input__get focus hover transition" id="url__image">
+            <input type="text" name="Uniform Resource Locator" class="input__get focus hover transition" id="url__image">
             <!-- Background -->
             <h3 class="third__title">fondo</h3>
             <section id="container__background">
                 <button>
-                    <input type="color" name="background" id="btn__bgimagen" class="btn__transition" value="#FFFFFF">
+                    <input type="color" name="background color" id="btn__bgimagen" class="btn__transition" value="#FFFFFF">
                     <span id="bgimagen__span">#FFFFFF</span>
                 </button>
                 <!-- Background selector -->
-                <select name="select" id="select__bg" class="bg__select focus hover transition">
+                <select name="filter selector" id="select__bg" class="bg__select focus hover transition">
                     <option value="unset" id="unset">Ninguno</option>
                     <option value="lighten" id="lighten">Aclarar</option>
                     <option value="darken" id="darken">Oscurecer</option>
@@ -100,7 +102,7 @@
                 <!-- Brightness -->
                 <article class="filter">
                     <label for="">brillo</label>
-                    <input type="range" name="glow" class="glow range" value="1" min="0" max="1" step="0.1">
+                    <input type="range" name="brightness" class="glow range" value="1" min="0" max="1" step="0.1">
                 </article>
                 <!-- Opacity -->
                 <article class="filter">
@@ -159,37 +161,37 @@
         <h2 class="second__title">texto</h2>
         <!-- Edit - Top text -->
         <h3 class="third__title">superior</h3>
-        <input type="text" name="text" id="input__text__top" class="input__get focus hover transition">
+        <input type="text" name="top text editor" id="input__text__top" class="input__get focus hover transition">
         <input type="checkbox" name="checkbox" id="check__text__top">
         <label for="" class="label__size">Sin texto superior</label>
-        <!-- Edit - Buttom text -->
+        <!-- Edit - Bottom text -->
         <h3 class="third__title">inferior</h3>
-        <input type="text" name="text" id="input__text__bottom" class="input__get focus hover transition">
+        <input type="text" name="bottom text editor" id="input__text__bottom" class="input__get focus hover transition">
         <input type="checkbox" name="checkbox" id="check__text__bottom">
         <label for="" class="label__size">Sin texto inferior</label>
         <!-- Font -->
         <section>
             <h3 class="third__title">fuente</h3>
-            <select name="" class="font__select focus hover transition">
+            <select name="font family" class="font__select focus hover transition select__font">
                 <option value="Arial">Arial</option>
                 <option value="Arial Black">Arial Black</option>
                 <option value="American Typewrite">American Typewrite</option>
                 <option value="Andale Mono">Andale Mono</option>
                 <option value="Comic Sans MS">Comic Sans MS</option>
                 <option value="Helvetica">Helvetica</option>
-                <option value="Impact">Impact</option>
+                <option value="Impact" selected>Impact</option>
                 <option value="Verdana">Verdana</option>
                 <option value="Times New Roman">Times New Roman</option>
             </select>
             <section class="font__size">
                 <input type="number" name="number" class="size focus hover transition" value="40">
-                <button class="btn__size left focus hover btn__transition">
+                <button class="left btn__size left focus hover btn__transition">
                     <i class="fas fa-align-left" aria-hidden="true"></i>
                 </button>
-                <button class="btn__size center focus hover btn__transition">
+                <button class="center btn__size center focus hover btn__transition">
                     <i class="fas fa-align-center" aria-hidden="true"></i>
                 </button>
-                <button class="btn__size right focus hover btn__transition">
+                <button class="right btn__size focus hover btn__transition">
                     <i class="fas fa-align-right" aria-hidden="true"></i>
                 </button>
             </section>
@@ -198,7 +200,7 @@
                 <article id="text__color">
                     <h3 class="third__title">color</h3>
                     <button>
-                        <input type="color" name="color__text" id="color__text" value="#000000">
+                        <input type="color" name="color text" id="color__text" value="#000000">
                         <span id="color__text__span">#000000</span>
                     </button>
                 </article>
@@ -206,7 +208,7 @@
                 <article id="font__color">
                     <h3 class="third__title">fondo</h3>
                     <button>
-                        <input type="color" name="background__text" id="bg__font" value="#FFFFFF">
+                        <input type="color" name="background text" id="bg__font" value="#FFFFFF">
                         <span id="bg__font__span">#FFFFFF</span>
                     </button>
                 </article>
@@ -226,15 +228,15 @@
             <!-- Spacing -->
             <section>
                 <h3 class="third__title">espaciado</h3>
-                <input type="number" name="" id="" class="input__get hover transition">
+                <input type="number" name="spacing" id="spacing" class="input__get hover transition" value="35">
             </section>
             <!-- Leading -->
             <section>
                 <h3 class="third__title">Interlineado</h3>
-                <select name="" class="input__get hover transition">
+                <select class="input__get hover transition leading">
                     <option value="0.8">0.8</option>
                     <option value="1">1</option>
-                    <option value="1.2">1.2</option>
+                    <option value="1.2" selected>1.2</option>
                     <option value="1.5">1.5</option>
                     <option value="2">2</option>
                     <option value="2.5">2.5</option>

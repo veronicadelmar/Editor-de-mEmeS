@@ -1,8 +1,5 @@
 // Universal selector
 const $ = (selector) => document.querySelector(selector)
-const num = 5
-
-// getAttribute, setAttribute, removeAttribute
 // _________ HEADER _________
 // Dark button - Mode change
 $("#btn__dark").addEventListener("click", () =>{
@@ -57,8 +54,8 @@ $(".btn__text__panel--close").addEventListener("click", () =>{
 })
 // _________ MAIN _________
 // IMAGEN URL
-$("#url__image").addEventListener("input", () =>{
-    $("#image__meme").style.url = $("#url__image").value
+$("#url__image").addEventListener("change", () =>{
+    $("#image__meme").style.backgroundImage = $("#url__image").value
 })
 // _________ ASIDE - Image panel
 // Background image
@@ -118,33 +115,30 @@ $(".btn__reset__filters").addEventListener ("click", btn__reset__filters)
 
 
 // _________ ASIDE - Text panel
-// text top
+// Text top
 $(".top__text").style.backgroundColor = "white"
 $("#input__text__top").addEventListener("input", ()=>{
     $(".top__text").innerText = $("#input__text__top").value
 })
-// text top - disappear     MEJORAR
+// Text top - disappear     MEJORAR
 $("#check__text__top").addEventListener("change", ()=>{
     $(".top__text").classList.remove("hidden")
     if ($("#check__text__top").checked){
         $(".top__text").classList.add("hidden")
     }
 })
-// text bottom
+// Text bottom
 $(".bottom__text").style.backgroundColor = "white"
 $("#input__text__bottom").addEventListener("input", ()=>{
     $(".bottom__text").innerText = $("#input__text__bottom").value
 })
-// // text bottom - disappear    MEJORAR
+// Text bottom - disappear    MEJORAR
 $("#check__text__bottom").addEventListener("change", ()=>{
     $(".bottom__text").classList.remove("hidden")
     if ($("#check__text__bottom").checked){
         $(".bottom__text").classList.add("hidden")
     }
 })
-
-
-
 // Unified EVENT - text top AND text - color and backgroundColor
 $("#color__text").addEventListener("input", () =>{
     $(".top__text").style.color = $("#color__text").value
@@ -175,23 +169,49 @@ $("#check__transparent").addEventListener("change", () =>{
     // $(".bottom__text").style.color = $("#btn__bgimagen").value
 
 // Font
-
-
-
+$(".select__font").addEventListener("click", () =>{
+    $(".top__text").style.fontFamily = $(".select__font").value
+    $(".bottom__text").style.fontFamily = $(".select__font").value
+})
+$(".size").addEventListener("change", () =>{
+    $(".top__text").style.fontSize = `${$(".size").value}px`
+    $(".bottom__text").style.fontSize = `${$(".size").value}px`
+})
+$(".left").addEventListener("click", () =>{
+    $(".top__text").style.textAlign = "left"
+    $(".bottom__text").style.textAlign = "left"
+})
+$(".center").addEventListener("click", () =>{
+    $(".top__text").style.textAlign = "center"
+    $(".bottom__text").style.textAlign = "center"
+})
+$(".right").addEventListener("click", () =>{
+    $(".top__text").style.textAlign = "right"
+    $(".bottom__text").style.textAlign = "right"
+})
 // Outline
-// none
+// None
 $(".btn__none").addEventListener("click", () =>{
     $(".top__text").style.textShadow = "none"
     $(".bottom__text").style.textShadow = "none"
 })
-// clear
+// Clear
 $(".btn__clear").addEventListener("click", () =>{
     $(".top__text").style.textShadow = `3px 3px #F0F0F0 , -3px -3px #F0F0F0, 3px -3px #F0F0F0, -3px 3px #F0F0F0`
     $(".bottom__text").style.textShadow = `3px 3px #F0F0F0 , -3px -3px #F0F0F0, 3px -3px #F0F0F0, -3px 3px #F0F0F0`
 })
-// darken
+// Darken
 $(".btn__darken").addEventListener("click", () =>{
     $(".top__text").style.textShadow = `2px 2px 2px #000000 , -2px -2px 2px #000000 , 2px -2px 2px #000000 , -2px 2px 2px #000000`
     $(".bottom__text").style.textShadow = `2px 2px 2px #000000 , -2px -2px 2px #000000 , 2px -2px 2px #000000 , -2px 2px 2px #000000`
 })
-
+// Spacing
+$("#spacing").addEventListener("input", () =>{
+    $(".top__text").style.padding = `${$("#spacing").value}px`
+    $(".bottom__text").style.padding = `${$("#spacing").value}px`
+})
+// Leading
+$(".leading").addEventListener("input", () =>{
+    $(".top__text").style.lineHeight = $(".leading").value
+    $(".bottom__text").style.lineHeight = $(".leading").value
+})
