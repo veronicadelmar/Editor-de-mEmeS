@@ -58,7 +58,7 @@ $(".btn__text__panel--close").addEventListener("click", () =>{
 // _________ MAIN _________
 // IMAGEN URL
 $("#url__image").addEventListener("input", () =>{
-    $("#image__meme").backgroundImage = $("#url__image").value
+    $("#image__meme").style.url = $("#url__image").value
 })
 // _________ ASIDE - Image panel
 // Background image
