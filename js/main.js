@@ -118,26 +118,28 @@ $(".btn__reset__filters").addEventListener ("click", btn__reset__filters)
 // _________ ASIDE - Text panel
 // Text top
 $(".top__text").style.backgroundColor = "white"
-$("#input__text__top").addEventListener("input", ()=>{
+$("#input__text__top").addEventListener("input", () =>{
     $(".top__text").innerText = $("#input__text__top").value
 })
-// Text top - disappear     MEJORAR
-$("#check__text__top").addEventListener("change", ()=>{
-    $(".top__text").classList.remove("hidden")
+// Text top - disappear
+$("#check__text__top").addEventListener("change", () =>{
     if ($("#check__text__top").checked){
         $(".top__text").classList.add("hidden")
+    } else{
+        $(".top__text").classList.remove("hidden")
     }
 })
 // Text bottom
 $(".bottom__text").style.backgroundColor = "white"
-$("#input__text__bottom").addEventListener("input", ()=>{
+$("#input__text__bottom").addEventListener("input", () =>{
     $(".bottom__text").innerText = $("#input__text__bottom").value
 })
-// Text bottom - disappear    MEJORAR
-$("#check__text__bottom").addEventListener("change", ()=>{
-    $(".bottom__text").classList.remove("hidden")
+// Text bottom - disappear
+$("#check__text__bottom").addEventListener("change", () =>{
     if ($("#check__text__bottom").checked){
         $(".bottom__text").classList.add("hidden")
+    } else{
+        $(".bottom__text").classList.remove("hidden")
     }
 })
 // Unified EVENT - text top AND text - color and backgroundColor
@@ -153,22 +155,21 @@ $("#bg__font").addEventListener("input", () =>{
     $("#bg__font__span").innerText = ($("#bg__font").value).toUpperCase()
     $("#bg__font").style.backgroundColor = $("#bg__font").value
 })
-// Checkbox transparent background text MEJORAR
+// Transparent background
 $("#check__transparent").addEventListener("change", () =>{
-    $(".top__text").style.backgroundColor = $("#image__meme").value
-    $(".bottom__text").style.backgroundColor = $("#image__meme").value
-
     if ($("#check__transparent").checked){
-        $(".top__text").style.background = "transparent"
-        $(".bottom__text").style.background = "transparent"
-        $(".container__memes__edit").style.backgroundImage = $("#input__text__top").value
+        $(".top__text").style.backgroundColor = "transparent"
+        $(".top__text").style.position = "absolute"
+        $(".top__text").style.top = "0"
+        $(".bottom__text").style.backgroundColor = "transparent"
+        $(".bottom__text").style.position = "absolute"
+        $(".bottom__text").style.bottom = "0"
+    } else{
+        $(".top__text").style.backgroundColor = $("#bg__font").value
+        $(".bottom__text").style.backgroundColor = $("#bg__font").value
     }
+    
 })
-// $(".top__text").style.backgroundColor = $("#bg__font").value
-    // $(".bottom__text").style.backgroundColor = $("#bg__font").value
-    // $(".top__text").style.color = $("#btn__bgimagen").value
-    // $(".bottom__text").style.color = $("#btn__bgimagen").value
-
 // Font
 $(".select__font").addEventListener("click", () =>{
     $(".top__text").style.fontFamily = $(".select__font").value
