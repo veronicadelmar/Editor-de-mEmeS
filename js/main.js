@@ -58,9 +58,7 @@ $(".btn__text__panel--close").addEventListener("click", () =>{
 // _________ MAIN _________
 // IMAGEN URL
 $("#url__image").addEventListener("input", () =>{
-    $("#image__meme").src = $("#url__image").value
-    $("#image__meme").style.width = "100%" 
-    $("#image__meme").style.height = "100%"
+    $("#image__meme").backgroundImage = $("#url__image").value
 })
 // _________ ASIDE - Image panel
 // Background image
@@ -69,9 +67,10 @@ $("#btn__bgimagen").addEventListener("input", () =>{
     $("#bgimagen__span").innerText = ($("#btn__bgimagen").value).toUpperCase()
     $("#btn__bgimagen").style.backgroundColor = $("#btn__bgimagen").value
 })
-// Background selector  (it does not take the changes in the image, but it does take the changes through the console)
+// Background selector
 $("#select__bg").addEventListener("click", () =>{
     $("#image__meme").style.backgroundBlendMode = $("#select__bg").value
+    $("#image__meme").style.backgroundColor = $("#btn__bgimagen").value
 })
 // ____Filters panel
 const range = () =>{
@@ -95,19 +94,13 @@ $(".hue").addEventListener("change", range)
 $(".crowded").addEventListener("change", range)
 //  Negative
 $(".negative").addEventListener("change", range)
-
-
-
-// $(".negative").addEventListener("change", () =>{
-//     const range__negative = $(".negative").value
-//     $("#image__meme").style.filter = `invert(${range__negative}%)`
-// })
 // Button reset NO ME FUNCIONA
 const btn__reset__filters = () =>{
-    const range = $('input[type="range"]')
-    range.value = range.defaultValue
+    $(".btn__reset__filters").value = `(${$(".glow").value}) (${$(".opacity").value})`
 }
-$(".btn__reset__filters").addEventListener("click", btn__reset__filters)
+$(".glow").addEventListener ("click", btn__reset__filters)
+$(".opacity").addEventListener ("click", btn__reset__filters)
+
 
 
 
