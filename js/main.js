@@ -94,16 +94,19 @@ $(".hue").addEventListener("change", range)
 $(".crowded").addEventListener("change", range)
 //  Negative
 $(".negative").addEventListener("change", range)
-// Button reset NO ME FUNCIONA
+// Button reset - Filters
 const btn__reset__filters = () =>{
-    $(".btn__reset__filters").value = `(${$(".glow").value}) (${$(".opacity").value})`
+    $(".glow").value = "100"
+    $(".opacity").value = "100"
+    $(".contrast").value = "0"
+    $(".blur").value = "0"
+    $(".grayscale").value = "0"
+    $(".sepia").value = "0"
+    $(".hue").value = "0"
+    $(".crowded").value = "0"
+    $("..negative").value = "0"
 }
-$(".glow").addEventListener ("click", btn__reset__filters)
-$(".opacity").addEventListener ("click", btn__reset__filters)
-
-
-
-
+$(".btn__reset__filters").addEventListener ("click", btn__reset__filters)
 // _________ ASIDE - Text panel
 // text top
 $(".top__text").style.backgroundColor = "white"
