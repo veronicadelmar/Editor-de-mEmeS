@@ -132,7 +132,7 @@ h1{
     max-width: 285px;
     background-color: black;
 }
-/* IMAGEN URL */
+/* IMAGE URL */
 #image__meme{
     display: flex;
     flex-direction: column;
@@ -150,11 +150,6 @@ h1{
     text-align: center;
     width: 100%;
     font-family: Impact;
-}
-.top__text{
-    position: static;
-}
-.bottom__text{
     position: static;
 }
 /* Button download */
@@ -378,7 +373,7 @@ input[type="checkbox"]{
     }
 }
 /* _________ Responsive 720px _____________*/
-@media (min-width: 720px ) {
+@media (min-width: 720px) {
     /* _________ HEADER _________ */
     h1{
         font-size: 2.2rem;
@@ -389,7 +384,7 @@ input[type="checkbox"]{
     }
 }
 /* _________ Responsive 990px _____________*/
-@media (min-width: 990px ) {
+@media (min-width: 990px) {
     /* _________ HEADER _________ */
     h1{
         font-size: 2.6rem;

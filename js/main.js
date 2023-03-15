@@ -107,20 +107,11 @@ const btn__reset__filters = () =>{
 $(".btn__reset__filters").addEventListener ("click", btn__reset__filters)
 // Button download
 const download__meme = () =>{
-    domtoimage.toBlob($("#image__meme")).then((blob) => {
-        saveAs(blob, 'my__meme.png')
+    domtoimage.toBlob($(".container__memes__edit")).then((blob) => {
+        saveAs(blob, "my__meme.png")
       })
 }
 $("#button__download").addEventListener('click', download__meme)
-    
-
-
-
-
-
-
-
-
 // _________ ASIDE - Text panel
 // Text top
 $(".top__text").style.backgroundColor = "white"
@@ -174,7 +165,6 @@ $("#check__transparent").addEventListener("change", () =>{
         $(".top__text").style.backgroundColor = $("#bg__font").value
         $(".bottom__text").style.backgroundColor = $("#bg__font").value
     }
-    
 })
 // Font
 $(".select__font").addEventListener("click", () =>{
