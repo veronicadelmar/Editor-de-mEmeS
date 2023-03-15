@@ -49,6 +49,8 @@
     top: 0;
     right: 0;
     width: 100%;
+    overflow-y: scroll;
+    height: 100%;
 }
 .second__title{
     margin-top: 30px;
@@ -108,7 +110,6 @@ h1{
     background-color: var(--bg--header);
     color: var(--color--primary);
 }
-
 /* _________ MAIN _________ */
 .container{
     background-color: var(--bg--main);
@@ -119,7 +120,6 @@ h1{
     flex-grow: 1;
     padding: 20px 22px;
 }
-
 /* Container memes editor */
 .container__memes__edit{
     display: flex;
