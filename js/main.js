@@ -5,12 +5,12 @@ const $ = (selector) => document.querySelector(selector)
 const change__theme = () => {
     const current__dark = $("body").getAttribute("data-theme")
     if (current__dark === $("light__theme")){
-        $("#btn__dark").classList.add("hidden")
-        $("#btn__light").classList.remove("hidden")
-        $("body").setAttribute("data-theme", "light__theme")
-    }else {
         $("#btn__dark").classList.remove("hidden")
         $("#btn__light").classList.add("hidden")
+        $("body").setAttribute("data-theme", "light__theme")
+    }else {
+        $("#btn__dark").classList.add("hidden")
+        $("#btn__light").classList.remove("hidden")
         $("body").removeAttribute("data-theme", "light__theme")
     }
 }
