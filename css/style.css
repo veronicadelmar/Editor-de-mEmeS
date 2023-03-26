@@ -270,7 +270,8 @@ input[type="checkbox"]{
 }
 .font__size{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-direction: row;
 }
 .size{
     background-color: var(--input--btn);
@@ -289,7 +290,7 @@ input[type="checkbox"]{
     border: none;
     border-radius: 3px;
     font-size: 1rem;
-    width: 16,6%;
+    width: 15%;
 }
 /* Font - color / Bg - color */
 .container__font{
@@ -305,7 +306,6 @@ input[type="checkbox"]{
     display: flex;
     align-items: center;
     color: var(--color--primary);
-    width: 130px;
 }
 #color__text{
     background-color: black;
