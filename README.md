@@ -1,5 +1,6 @@
 # Meme Generator  💻 xD!
-![image](./img/creadorDeMemes.png)
+## Deploy
+https://veronicadelmar.github.io/Editor-de-mEmeS/
 
 Welcome, website by Veronica Guiñan
 
@@ -9,7 +10,7 @@ Training conducted at the **ADA ITW ONG**
 
 ***
 
-## Tecnologic used to develop the website:
+## Technologies used to develop the website:
      - Html and Css
      - JavaScript [Variables, Conditionals, Functions, Events and Library (dom-to-image)]
 
@@ -22,5 +23,9 @@ Training conducted at the **ADA ITW ONG**
 ## Sample
 
 ![image](./img/my__meme.png)
+
+### Follow me
+
+![image](./img/creadorDeMemes.png)
 
 

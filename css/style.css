@@ -11,6 +11,8 @@
     --bg--ranger: #5a5c68;
     --circle--ranger: #fffffd;
     --border--checkbox: #7b7d83;
+    --footer--color: #a8a8a8;
+    --name: #fc5e9a;
 }
 /* Theme - light mode */
 [data-theme="light__theme"]{
@@ -25,6 +27,8 @@
     --bg--ranger: #5a5c69;
     --circle--ranger: #424242;
     --border--checkbox: #767676;
+    --footer--color: #1d1d1d;
+    --name: crimson;
 }
 /* General styles */
 *{
@@ -160,7 +164,7 @@ h1{
     border-radius: 3px;
     color: #ffffff;
     background-color: var(--btn--download);
-    margin-top: 30px;
+    margin: 30px 0;
 }
 #button__download:focus{
     background-color: var(--btn--download--hover);
@@ -331,6 +335,28 @@ input[type="checkbox"]{
     border-radius: 3px;
     font-size: 1rem;
 }
+/* Footer */
+footer{
+    background-color: var(--bg--header);
+    text-align: center;
+    color: var(--footer--color);
+    padding: 10px 0;
+}
+footer h5, footer h4{
+    padding: 0 0 5px 0;
+    font-weight: 500;
+}
+footer a{
+    text-decoration: none;
+}
+footer i{
+    color: red;
+}
+footer a, footer span{
+    font-style: oblique;
+    font-weight: bold;
+    color: var(--name);
+}
 /* _________ Responsive 420px _____________*/
 @media (min-width: 420px){
     /* _________ MAIN ________ */
@@ -425,5 +451,9 @@ input[type="checkbox"]{
     }
     .image__panel{
         display: block;
+    }
+    /* Footer */
+    footer a:hover{
+        color: #8c00ff;
     }
 }

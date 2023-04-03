@@ -2,22 +2,22 @@
 const $ = (selector) => document.querySelector(selector)
 // _________ HEADER _________
 // Mode change
-const change__theme = () => {
-    const current__dark = $("body").getAttribute("data-theme")
-    if (current__dark === $("light__theme")){
-        $("#btn__dark").classList.remove("hidden")
-        $("#btn__light").classList.add("hidden")
-        $("body").setAttribute("data-theme", "light__theme")
-    }else {
+const changeTheme = () => {
+    const currentDark = $("body").getAttribute("data-theme")
+    if (currentDark){
         $("#btn__dark").classList.add("hidden")
         $("#btn__light").classList.remove("hidden")
         $("body").removeAttribute("data-theme", "light__theme")
+    }else {
+        $("#btn__dark").classList.remove("hidden")
+        $("#btn__light").classList.add("hidden")
+        $("body").setAttribute("data-theme", "light__theme")
     }
 }
 // Dark button
-$("#btn__dark").addEventListener("click", change__theme)
+$("#btn__dark").addEventListener("click", changeTheme)
 // Light button
-$("#btn__light").addEventListener("click", change__theme)
+$("#btn__light").addEventListener("click", changeTheme)
 // BTN - Image and Text
 // _________ ASIDE - Image panel - appear ________
 $("#btn__img").addEventListener("click", () =>{
@@ -83,7 +83,7 @@ $(".crowded").addEventListener("change", range)
 //  Negative
 $(".negative").addEventListener("change", range)
 // Button reset - Filters
-const btn__reset__filters = () =>{
+const btnResetFilters = () =>{
     $(".glow").value = "100"
     $(".opacity").value = "100"
     $(".contrast").value = "0"
@@ -93,16 +93,16 @@ const btn__reset__filters = () =>{
     $(".hue").value = "0"
     $(".crowded").value = "0"
     $(".negative").value = "0"
-    $("#image__meme").style.filter = "none"
+    range()
 }
-$(".btn__reset__filters").addEventListener ("click", btn__reset__filters)
+$(".btn__reset__filters").addEventListener ("click", btnResetFilters)
 // Button download
-const download__meme = () =>{
+const downloadMeme = () =>{
     domtoimage.toBlob($(".container__memes__edit")).then((blob) => {
         saveAs(blob, "my__meme.png")
       })
 }
-$("#button__download").addEventListener('click', download__meme)
+$("#button__download").addEventListener('click', downloadMeme)
 // _________ ASIDE - Text panel
 // Text top
 $(".top__text").style.backgroundColor = "white"
